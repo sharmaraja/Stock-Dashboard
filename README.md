@@ -1,2 +1,2 @@
 # Stock-Dashboard
-A dashboard for predictiing stock prices.
+A dashboard for predicting stock prices.
