@@ -1,3 +1,9 @@
+pandas
+numpy
+scikit-learn
+streamlit
+joblib
+
 yfinance==0.1.63
 alpha_vantage==2.3.1
 stocknews==0.1.0
