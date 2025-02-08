@@ -14,7 +14,7 @@ def get_base64(image_path):
         return base64.b64encode(image_file.read()).decode()
 
 # Provide the correct path to your local image
-bg_image = get_base64(r"C:\Users\Admin\Downloads\Codes\Streamlit\Stocks\Stock-Dashboard\Bck_Stocks.jpg")
+bg_image = get_base64("Bck_Stocks.jpg")
 
 
 # Use Streamlit custom CSS to apply the background
