@@ -14,7 +14,7 @@ def get_base64(image_path):
         return base64.b64encode(image_file.read()).decode()
 
 # Provide the correct path to your local image
-bg_image = get_base64("Bck_Stocks.jpg")
+bg_image = get_base64(r"C:\Users\Admin\Downloads\Codes\Streamlit\Stocks\Stock-Dashboard\Bck_Stocks.jpg")
 
 
 # Use Streamlit custom CSS to apply the background
@@ -66,6 +66,18 @@ st.markdown(
         border-radius: 5px !important;
         padding: 8px !important;
     }}
+    
+    .prediction-box {{
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: green;
+            border: 2px solid black;
+        }}
+    
     </style>
     """,
     unsafe_allow_html=True
@@ -128,7 +140,13 @@ def main():
         if open_price > 0 and close_price > 0 and date.strip():
             try:
                 prediction = predict_close(open_price, close_price, date)
-                st.success(f"Predicted 15-min Candle Close Price: {prediction:.2f}")
+                 # Display prediction with styled output
+                st.markdown(
+                    f'<div class="prediction-box">Predicted 15-min Candle Close Price: {prediction:.2f}</div>',
+                    unsafe_allow_html=True
+                )
+                
+#                 st.success(f"Predicted 15-min Candle Close Price: {prediction:.2f}")
             except Exception as e:
                 st.error(f"Error: {e}")
         else:
